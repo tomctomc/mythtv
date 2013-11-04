@@ -3703,9 +3703,11 @@ bool AvFormatDecoder::ProcessVideoFrame(AVStream *stream, AVFrame *mpa_pic)
             ignore_scte = 10;
     }
 
+#ifdef TOMCXXX_CRASHES_MYTHCOMMFLAG
     // Decode CEA-608 and CEA-708 captions
     for (uint i = 0; i < cc_len; i += ((cc_buf[i] & 0x1f) * 3) + 2)
         DecodeDTVCC(cc_buf + i, cc_len - i, scte);
+#endif /* TOMCXXX_CRASHES_MYTHCOMMFLAG */
 
     VideoFrame *picframe = (VideoFrame *)(mpa_pic->opaque);
 
