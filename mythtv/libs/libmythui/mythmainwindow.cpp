@@ -2222,6 +2222,7 @@ bool MythMainWindow::eventFilter(QObject *, QEvent *e)
             break;
         }
         case QEvent::Wheel:
+            return false; /* TOMCXXX DISABLING MOUSE WHEEL!
         {
             ResetIdleTimer();
             ShowMouseCursor(true);
@@ -2251,6 +2252,7 @@ bool MythMainWindow::eventFilter(QObject *, QEvent *e)
             }
             break;
         }
+        TOMCXXX DISABLING MOUSE WHEEL! */
         default:
             break;
     }
