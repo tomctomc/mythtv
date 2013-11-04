@@ -4413,6 +4413,7 @@ char *MythPlayer::GetScreenGrabAtFrame(uint64_t frameNum, bool absolute,
     if (!decoderThread)
         DecoderStart(true /*start paused*/);
     SeekForScreenGrab(number, frameNum, absolute);
+    LOG(VB_PLAYBACK, LOG_INFO, LOC + "TOMCXXX: allowing 1.5 seconds for I-Frame to pass for screen grab\n" ); UnpauseDecoder(); usleep(1500000); PauseDecoder();
     int tries = 0;
     while (!videoOutput->ValidVideoFrames() && ((tries++) < 500))
     {
