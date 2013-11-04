@@ -302,7 +302,7 @@ enable $PLUGIN_LIST $CONFIG_LIST $DEPEND_LIST
 prefix="/usr/local"
 libdir_name="lib"
 sysroot=""
-ln_s="ln -sf"
+ln_s="cp"
 
 logfile="config.ep"
 
